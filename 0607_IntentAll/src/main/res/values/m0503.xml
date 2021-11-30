@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="m0503_chb01">音樂</string>
+    <string name="m0503_chb02">唱歌</string>
+    <string name="m0503_chb03">跳舞</string>
+    <string name="m0503_chb04">旅行</string>
+    <string name="m0503_b001">確定</string>
+    <string name="m0503_t001">喜好:</string>
+
+</resources>
