@@ -1,7 +1,5 @@
 package tw.tcnr05.m0609;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -13,13 +11,15 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import java.nio.file.Paths;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class Menu01 extends AppCompatActivity {
+public class Menu02 extends AppCompatActivity {
 
     private TextView myname;
     private TextView tv;
     private Intent intent01=new Intent();
+    private String mode_title;
+    private Intent intent02=new Intent();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +64,12 @@ public class Menu01 extends AppCompatActivity {
         objt001.setVisibility(View.GONE); // 設定參考物件隱藏不佔空間
         // ----
 
+
+
+        intent02=this.getIntent();
+        mode_title=intent02.getStringExtra("subname");
+       this.setTitle(getResources().getIdentifier(mode_title,"string",getPackageName()));
+
         try {
 
             for (int i = 5; i <= 20; i++) {// 設定走20圈, 遇到沒資料自動停止.
@@ -104,6 +110,7 @@ public class Menu01 extends AppCompatActivity {
     }
 
 
+
     private View.OnClickListener clkOn=new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -114,8 +121,8 @@ public class Menu01 extends AppCompatActivity {
         // ------------------------------------------
 //            Log.d(TAG, "subname:"+subname);
 //            intent01.putExtra("sel", ii);
-        intent01.putExtra("subname", subname); // subname => m05,m06,m07....m17
-        intent01.setClass(Menu01.this, Menu02.class);
+        intent02.putExtra("subname", subname); // subname => m05,m06,m07....m17
+        intent02.setClass(Menu02.this, Menu03.class);
         startActivity(intent01);
         
         
@@ -134,8 +141,6 @@ public class Menu01 extends AppCompatActivity {
         return true;
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -151,13 +156,18 @@ public class Menu01 extends AppCompatActivity {
 
             case R.id.action_settings:
 
-this.finish();
+                this.finish();
                 break;
 
 
         }
 
-
+//        if (id == R.id.action_settings) {
+//
+//            this.finish();
+//            return true;
+//        }
+//
    return super.onOptionsItemSelected(item);
      
 

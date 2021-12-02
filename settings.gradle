@@ -21,3 +21,5 @@ include ':0608_calculator'
 include ':6.8aGetIdentifier'
 include ':6.8b HobbySel'
 include ':0609_IndexMicro'
+
+include ':myapplication'
